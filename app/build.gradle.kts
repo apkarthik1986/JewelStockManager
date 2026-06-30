@@ -100,14 +100,8 @@ dependencies {
     // Coroutines
     implementation(libs.coroutines.android)
 
-    // Accompanist
-    implementation(libs.accompanist.swiperefresh)
-
     // Gson
     implementation(libs.gson)
-
-    // DataStore
-    implementation(libs.datastore.preferences)
 
     // Tests
     testImplementation(libs.junit)
