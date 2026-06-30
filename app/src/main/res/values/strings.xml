@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JewelStockManager</string>
+    <string name="sync_in_progress">Syncing…</string>
+    <string name="sync_complete">Sync complete</string>
+    <string name="sync_failed">Sync failed</string>
+    <string name="pull_to_refresh">Pull to refresh</string>
+    <string name="select_category">Select Category</string>
+    <string name="select_box">Select Box Number</string>
+    <string name="box_tare_weight">Box Tare Weight</string>
+    <string name="total_jewel_weight">Total Jewel Weight</string>
+    <string name="gross_total_weight">Gross Total Weight</string>
+    <string name="status_available">Available</string>
+    <string name="status_sold">Sold</string>
+    <string name="status_under_repair">Under Repair</string>
+    <string name="status_under_validation">Under Validation</string>
+    <string name="item_id">Item ID</string>
+    <string name="item_name">Name</string>
+    <string name="item_weight">Weight</string>
+    <string name="item_status">Status</string>
+    <string name="no_items_in_box">No items found in this box</string>
+    <string name="select_category_first">Please select a category first</string>
+    <string name="home_title">Jewelry Inventory</string>
+    <string name="inventory_title">Box Inventory</string>
+    <string name="grams_unit">g</string>
+    <string name="sync_worker_notification">Syncing inventory data…</string>
+    <string name="channel_sync_name">Sync</string>
+    <string name="channel_sync_desc">Background inventory sync notifications</string>
+    <string name="error_network">Network error. Showing cached data.</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+</resources>
