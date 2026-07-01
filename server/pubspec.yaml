@@ -1,0 +1,10 @@
+name: jewel_stock_manager_server
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  shelf: ^1.4.2
+  shelf_router: ^1.1.4
