@@ -130,11 +130,14 @@ class InventoryController extends ChangeNotifier {
   }
 
   WeightSummary? summaryForBox(String boxNumber) {
-    final box = boxes.firstWhere(
-      (b) => b.boxNumber == boxNumber,
-      orElse: () => BoxConfig(boxNumber: '', category: '', tareWeightGrams: 0, location: ''),
-    );
-    if (box.boxNumber.isEmpty) return null;
+    BoxConfig? box;
+    for (final candidate in boxes) {
+      if (candidate.boxNumber == boxNumber) {
+        box = candidate;
+        break;
+      }
+    }
+    if (box == null) return null;
 
     final boxItems = itemsForBox(box.boxNumber);
     final active = boxItems.where((i) => i.status.isWeightActive).toList();
