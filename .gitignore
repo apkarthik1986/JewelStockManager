@@ -8,3 +8,17 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+coverage/
+**/doc/api/
+android/app/debug
+android/app/profile
+android/app/release
