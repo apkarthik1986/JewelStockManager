@@ -1,7 +1,7 @@
 import 'item_status.dart';
 
 class JewelItem {
-  JewelItem({
+  const JewelItem({
     required this.id,
     required this.name,
     required this.category,
@@ -28,5 +28,14 @@ class JewelItem {
   final String category;
   final String boxNumber;
   final double weightGrams;
-  ItemStatus status;
+  final ItemStatus status;
+
+  JewelItem copyWith({ItemStatus? status}) => JewelItem(
+        id: id,
+        name: name,
+        category: category,
+        boxNumber: boxNumber,
+        weightGrams: weightGrams,
+        status: status ?? this.status,
+      );
 }

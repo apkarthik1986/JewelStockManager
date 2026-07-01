@@ -1,3 +1,10 @@
+/// Weight totals for a single storage box.
+///
+/// - [tareWeightGrams]: the empty box weight.
+/// - [totalJewelWeightGrams]: sum of weights of *active* items only
+///   (status is `available` or `underValidation`).
+/// - [grossTotalWeightGrams]: tare + totalJewelWeightGrams (what you'd
+///   read on a scale with all active items inside the box).
 class WeightSummary {
   WeightSummary({
     required this.boxNumber,

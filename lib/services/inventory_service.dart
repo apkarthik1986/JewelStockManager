@@ -31,12 +31,6 @@ class InventoryService {
         : uri;
   }
 
-  Future<List<String>> fetchCategories() async {
-    final res = await _client.get(_uri('/api/categories'));
-    _checkStatus(res);
-    return (jsonDecode(res.body) as List).cast<String>();
-  }
-
   Future<List<BoxConfig>> fetchBoxes({String? category}) async {
     final params = <String, String>{};
     if (category != null) params['category'] = category;
@@ -55,12 +49,6 @@ class InventoryService {
     return (jsonDecode(res.body) as List)
         .map((e) => JewelItem.fromJson(e as Map<String, dynamic>))
         .toList();
-  }
-
-  Future<WeightSummary> fetchSummary(String boxNumber) async {
-    final res = await _client.get(_uri('/api/boxes/$boxNumber/summary'));
-    _checkStatus(res);
-    return WeightSummary.fromJson(jsonDecode(res.body) as Map<String, dynamic>);
   }
 
   Future<JewelItem> updateItemStatus(String itemId, ItemStatus status) async {

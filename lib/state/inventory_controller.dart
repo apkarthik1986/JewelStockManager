@@ -108,13 +108,16 @@ class InventoryController extends ChangeNotifier {
     final index = _items.indexWhere((i) => i.id == itemId);
     if (index == -1) return;
 
-    // Optimistic update
-    _items[index].status = newStatus;
+    // Optimistic update — replace with an immutable copy
+    _items = List.of(_items)..[index] = _items[index].copyWith(status: newStatus);
     notifyListeners();
 
     try {
       final updated = await _service.updateItemStatus(itemId, newStatus);
-      _items[index].status = updated.status;
+      final confirmedIndex = _items.indexWhere((i) => i.id == itemId);
+      if (confirmedIndex != -1) {
+        _items = List.of(_items)..[confirmedIndex] = updated;
+      }
     } catch (e) {
       _error = 'Failed to update item: $e';
     }
@@ -122,7 +125,7 @@ class InventoryController extends ChangeNotifier {
   }
 
   /// Synchronously load seed data. Used in widget tests to bypass network.
-  void loadFromServerForTest() {
+  void loadSeedDataForTest() {
     _loadSeedData();
     notifyListeners();
   }
